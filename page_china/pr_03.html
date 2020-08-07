@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>간단 퀴즈</title>
+	<style>
+		body {
+			background-color : aliceblue;
+			margin : 0;
+		}
+
+		#menubar {
+			background : mediumturquoise;
+			
+		}/* #menubar는 상단바 - royalblue, mediumturquoise*/
+		#menubar ul{
+			margin : 0;
+			padding : 0;
+			width : 100%;
+			height: 50px;
+			padding-left : 150px;
+		}
+		#menubar ul li{
+			display : inline-block;/*새줄로 넘어가지 않게*/
+			padding : 15px 10px;
+			list-style-type : square;
+		}
+		#menubar ul li a {
+			color : white;
+			text-decoration : none; /*밑줄 삭제*/
+			padding-left : 10px; /*글자 간격 10*/
+		}
+		
+		/*-------------------------------------------여기까지 메뉴바 */
+		
+		#content-left {
+			background-color : aliceblue;
+			position : absolute;
+			height: 100%;
+			left: 0px;
+			width: 150px;
+			margin: 0;
+			float: left;
+		} /* 왼쪽 div*/
+		#content-right {
+			background-color : aliceblue;
+			position : absolute;
+			height: 100%;
+			right: 0;
+			width: 380px;
+			float: right;
+			margin: 0;
+		}/* 오른쪽 div*/
+
+		#content-middle {
+			background-color : white;
+			position : absolute;
+			left : 150px;
+			right: 400px;
+			width: 900px;
+			height: auto; min-height: 100px; overflow: auto;
+			padding : 10px; /*글자 주변 공간*/
+			padding-left : 50px;
+			padding-right : 50px;
+			border-style: solid;
+			border-color: silver;
+			border-width: 0.1px;
+			border-top : none;
+			border-bottom : none;
+
+		} /* 가운데 div*/
+		
+
+		/*img { display: block; margin: 0px auto; }사진은 블록 처리 후 모두 가운데로*/
+
+		table { 
+			border-color: aliceblue;
+			border-collapse: collapse;/* 이중 테두리 제거 */
+			margin-left: auto;
+			margin-right: auto;
+			 } 
+		td, th {
+			text-align: center;
+			padding : 5px;
+			width: 350px;
+		}
+		thead {
+			background: skyblue;
+			color: white;
+		}
+		/*-------------------------------테이블과 사진 관련*/
+		#table {
+			background-color : white;
+			height: auto;
+			width: auto;
+			margin-left: 50px;
+			width: 450px;
+			margin: 0;
+			float: right;
+		}
+		#index {
+			background-color : white;
+			height: 350px;
+			width: 350px;
+			right: 0;
+			float: left;
+			margin: 0;
+			border-style: solid;
+			border-color: gray;
+			border-width: 0.5px;
+			padding: 30px;
+		}
+		/*-------------------------------목차와 테이블을 span처리 */
+
+		#notice {
+			border: 5px solid steelblue;
+			height: 230px;
+			width: 600px;
+			display: block; 
+			margin: 0px auto; /* 가운데 정렬*/
+			padding-left: 50px;
+			padding-top: 30px;
+			box-shadow: 3px 3px 5px grey;
+		}
+		form {
+			margin-left:20px;
+		}
+
+	</style>
+</head>
+	<body>
+		<script>
+		function submit_one() {
+			var found = null;
+			var kone = document.getElementsByName("one");
+
+			for(var i = 0; i < kone.length; i++){
+				if(kone[i].checked == true)
+					found = kone[i];
+			}
+			if(found != null)
+				alert("1번 문제에서 " + found.value + " 이 선택되었음");
+			else
+				alert("선택된 것이 없음")
+
+			var correct = 2;
+			if(found.value == 2)
+				alert("정답입니다!");
+			else
+				alert("틀렸습니다.");
+		} 
+		/* 1번 문제 관련 --------------------------------------------*/
+
+		function submit_two() {
+			var found_1 = null;
+			var found_2 = null;
+			var found_3 = null;
+			var ktwo_1 = document.getElementsByName("two-1");
+			var ktwo_2 = document.getElementsByName("two-2");
+			var ktwo_3 = document.getElementsByName("two-3");
+
+			for(var i = 0; i < ktwo_1.length; i++){
+				if(ktwo_1[i].checked == true)
+					found_1 = ktwo_1[i];
+			}
+			for(var i = 0; i < ktwo_2.length; i++){
+				if(ktwo_2[i].checked == true)
+					found_2 = ktwo_2[i];
+			}
+			for(var i = 0; i < ktwo_3.length; i++){
+				if(ktwo_3[i].checked == true)
+					found_3 = ktwo_3[i];
+			}
+			
+			if(found_1 != null || found_2 != null || found_3 != null)
+				alert("2번 문제에서 " + found_1.value + "," + found_2.value + "," + found_3.value + " 이 선택되었음");
+			else
+				alert("선택된 것이 없음");
+		
+			if(found_1 != null && found_2 != null && found_3 != null)
+				alert("정답입니다!");
+			else
+				alert("틀렸습니다.");
+		}
+		/* 2번 문제 관련 --------------------------------------------*/
+
+		function submit_three() {
+			var found = null;
+			var kthree = document.getElementsByName("three");
+
+			for(var i = 0; i < kthree.length; i++){
+				if(kthree[i].checked == true)
+					found = kthree[i];
+			}
+			if(found != null)
+				alert("3번 문제에서 " + found.value + " 이 선택되었음");
+			else
+				alert("선택된 것이 없음")
+
+			var correct = 1;
+			if(found.value == 1)
+				alert("정답입니다!");
+			else
+				alert("틀렸습니다.");
+		} 
+
+		</script>
+
+
+		<nav id="menubar">
+			<ul>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_01.html"> HOME </a>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_02.html"> 오해 </a>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_03.html"> 간단 퀴즈 </a>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_04.html"> '니하오'를 아십니까? </a>	
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_05.html"> 퍼즐 </a>
+				<!--<li> 
+					<form name= "fo" method="get">
+					ID : <input type="text" size="15" value="">
+					PW : <input type="password" size="15" value="">
+					<input type="submit" value="로그인"></form>-->
+			</ul> <!--메뉴바 -->
+		</nav>
+
+		<div id = "content-left"></div>
+
+		<div id = "content-right"> &#160;&#160; <!--탭--></div>
+
+		<div id = "content-middle">
+			<h1> 퀴즈를 풀어봅시다 </h1><h4> 앞의 내용을 바탕으로 </h4>
+			<br><br>
+			<div id = "notice">
+				<h3 style="color:royalblue"><strong>[유의 사항]</h3><br>
+				1. 모든 문제는 지금까지 다뤘던 내용에 관한 것입니다.<br>
+				2. 문제 풀이가 끝나면 왼쪽 하단 '정답 확인' 버튼을 클릭해주시길 바랍니다.<br>
+				3. '정답 확인' 버튼 클릭 후 즉시 채점 결과 확인 가능합니다.<br>
+				4. 만약 잘못 선택 하셨다면 '초기화' 버튼을 눌러주시기 바랍니다.<br></strong>
+
+			</div><br><br><br><br><br>
+
+
+			<h2> <span style="color:royalblue">1.</span> 2018년 기준 전 세계에서 탄소배출량이 가장 많은 나라는? </h2><hr><br>
+
+			<form name="fo" mathod="get">
+				<label>
+					<input type="radio" name="one" value="1">
+					미국 &#160;&#160;<img src="C:\Users\이주은\Desktop\Web\usa.jpg" width="70"
+					height="50" alt="사진 없음">
+				</label> <br><br>
+				<label>
+					<input type="radio" name="one" value="2">
+					중국 &#160;&#160;<img src="C:\Users\이주은\Desktop\Web\국기.png" width="70"
+					height="50" alt="사진 없음">
+				</label> <br><br>
+				<label>
+					<input type="radio" name="one" value="3">
+					일본 &#160;&#160;<img src="C:\Users\이주은\Desktop\Web\japan.jpg" width="70"
+					height="50" alt="사진 없음">
+				</label> <br><br>
+
+				<input type='reset'>
+
+				<span style="margin-left: 10px">
+				<input type = "button" value="정답 확인"
+				onclick = "submit_one()">
+			</span>
+			<br><br><br>
+
+			</form>
+			
+			
+
+			<h2> <span style="color:royalblue">2.</span> 중국에서 판매, 유통되었던 짝퉁의 종류를 모두 고르시오 </h2><hr><br>
+
+			<form name="fo" mathod="get">
+				<label>
+					<input type="radio" name="two-1" value="1">
+					달걀 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<img src="C:\Users\이주은\Desktop\Web\egg.jpg" width="70" height="50" alt="사진 없음">
+				</label><br><br>
+
+				<label>
+					<input type="radio" name="two-2" value="2">
+					예능 프로그램 &#160;&#160;<img src="C:\Users\이주은\Desktop\Web\tv.jpg" width="70"
+					height="50" alt="사진 없음">
+				</label><br><br>
+
+				<label>
+					<input type="radio" name="two-3" value="3">
+					게임&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<img src="C:\Users\이주은\Desktop\Web\game.png" width="70"height="50" alt="사진 없음">
+				</label><br><br>
+
+				<input type='reset'>
+
+				<span style="margin-left: 10px">
+					<input type = "button" value="정답 확인"
+					onclick = "submit_two()">
+				</span>
+			<br><br><br>
+
+			</form>
+
+				
+
+
+			<h2> <span style="color:royalblue">3.</span> 탄소배출량, 탄소배출권에 관한 설명으로 알맞은 것을 고르시오 </h2><hr><br>
+
+			<form name="fo" mathod="get">
+				<input type="radio" name="three" value="1">
+				탄소배출권이란, 6대 온실가스를 정해진 일정기간 동안 배출할 수 있도록 개별국가에 부여하는 권리이다. <br><br>
+				<input type="radio" name="three" value="2">
+				중국은 2030년 이후로 탄소배출을 계속해서 늘려갈 것이라고 하였다. <br><br>
+				<input type="radio" name="three" value="3">
+				탄소배출권은 각 나라가 부여받은 고유한 것이기 때문에 국가간 거래는 불가능하다. <br><br>
+
+				<input type='reset'>
+
+				<span style="margin-left: 10px">
+				<input type = "button" value="정답 확인"
+				onclick = "submit_three()">
+				</span>
+				<br><br><br>
+			</form>
+			
+		</div>
+	</body>
+</html>

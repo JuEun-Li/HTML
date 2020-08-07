@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>오늘의 중국</title>
+	<style>
+		body {
+			background-color : aliceblue;
+			margin : 0;
+		}
+
+		#menubar {
+			background : mediumturquoise;
+			
+		}/* #menubar는 상단바 - royalblue, mediumturquoise*/
+		#menubar ul{
+			margin : 0;
+			padding : 0;
+			width : auto;
+			height: 50px;
+			padding-left : 150px;
+		}
+		#menubar ul li{
+			display : inline-block;/*새줄로 넘어가지 않게*/
+			padding : 15px 10px;
+			list-style-type : square;
+		}
+		#menubar ul li a {
+			color : white;
+			text-decoration : none; /*밑줄 삭제*/
+			padding-left : 10px; /*글자 간격 10*/
+		}
+		#menubar ul li form {
+			display : inline-block;
+			top: 10px;
+			right: 30px;
+			padding-left : 350px;
+		}
+		
+		/*-------------------------------------------여기까지 메뉴바 */
+		
+		#content-left {
+			background-color : aliceblue;
+			position : absolute;
+			height: 100%;
+			left: 0px;
+			width: 150px;
+			margin: 0;
+			float: left;
+		} /* 왼쪽 div*/
+		#content-right {
+			background-color : aliceblue;
+			position : absolute;
+			height: 100%;
+			right: 0;
+			width: 380px;
+			float: right;
+			margin: 0;
+		}/* 오른쪽 div*/
+
+		#content-middle {
+			background-color : white;
+			position : absolute;
+			left : 150px;
+			right: 400px;
+			width: 900px;
+			height: auto; min-height: 100px; overflow: auto;
+			padding : 10px; /*글자 주변 공간*/
+			padding-left : 50px;
+			padding-right : 50px;
+			border-style: solid;
+			border-color: silver;
+			border-width: 0.1px;
+			border-top : none;
+			border-bottom : none;
+
+		} /* 가운데 div*/
+		
+
+		img { display: block; margin: 0px auto; }/*사진은 블록 처리 후 모두 가운데로*/
+
+		table { 
+			border-color: aliceblue;
+			border-collapse: collapse;/* 이중 테두리 제거 */
+			margin-left: auto;
+			margin-right: auto;
+			 } 
+		td, th {
+			text-align: center;
+			padding : 7px;
+			width: 350px;
+		}
+		thead {
+			background: skyblue;
+			color: white;
+		}
+		/*-------------------------------테이블과 사진 관련*/
+		#table {
+			background-color : white;
+			height: auto;
+			width: auto;
+			margin-left: 50px;
+			width: 450px;
+			margin: 0;
+			float: right;
+		}
+		#index {
+			background-color : white;
+			height: 350px;
+			width: 350px;
+			right: 0;
+			float: left;
+			margin: 0;
+			border-style: solid;
+			border-color: gray;
+			border-width: 0.5px;
+			padding: 30px;
+		}
+		/*-------------------------------목차와 테이블을 span처리 */
+	</style>
+	<script>
+		function checkFiled(obj) {
+			if(obj.value == ""){
+				alert("아이디와 비밀번호를 입력해야 다른 페이지로 넘어갈 수 있습니다.");
+				obj.focus();
+			}
+		}
+
+	</script>
+
+</head>
+	<body onload="document.getElementById('name').focus();">
+		<nav id="menubar">
+			<ul>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_01.html"> HOME </a>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_02.html"> 오해 </a>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_03.html"> 간단 퀴즈 </a>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_04.html"> '니하오'를 아십니까? </a>	
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_05.html"> 퍼즐 </a>
+				<li> 
+					<form name= "fo" method="get">
+					ID : <input type="text" size="15" value="" id = "name" onblur="checkFiled(this)">
+					PW : <input type="password" size="15" value="">
+					<input type="submit" value="로그인"></form>
+			</ul> <!--메뉴바 -->
+		</nav>
+
+		<div id = "content-left"></div>
+
+		<div id = "content-right"></div>
+
+		<div id = "content-middle">
+			<h1> 오늘의 중국 </h1>
+			<br>
+			<img src="C:\Users\이주은\Desktop\Web\china.jpg" width="550"
+			height="350" alt="사진 없음"><br>
+			<br>
+			<br>
+			<span id = table>
+				<table border="1">
+				<thead> 
+					<tr><th> 중화인민공화국 <br> 中华人民共和国 <br> People's Republic of China </th></tr> </thead>
+
+				<thead> 
+					<tr><th> 국기 </th></tr> </thead>
+				<tbody>
+					<tr><td>  <img src="C:\Users\이주은\Desktop\Web\국기.png" width="100"
+					height="80" alt="사진 없음"> </td></tr></tbody>
+
+				<thead> 
+					<tr><th> 수도 </th></tr> </thead>
+
+				<tbody>
+					<tr><td>  베이징(北京) </td></tr></tbody>
+
+				<thead> 
+					<tr><th> 인구 </th></tr></thead>
+
+				<tbody>
+					<tr> <td> 1,439,323,774명(2020년) </td></tr></tbody>
+
+				<thead> 
+					<tr><th> 공용어  </th></tr></thead>
+
+				<tbody>
+					<tr> <td> 중국어 </td></tr></tbody>
+			</table> </span>
+			
+			<span id = index>	
+			<h3> 목차 </h3>
+			<hr>
+			<details>
+				<summary> 1. 부정적 인식의 원인 </summary>
+				<p> <ul><li><a href="#one-one"> 1-1. 짝퉁사건 </a></ul>
+				<p> <ul><li><a href="#one-two"> 1-2. 중국인들의 매너, 소문 </a></ul>
+				<p> <ul><li><a href="#one-three"> 1-3. 코로나19 사태 </a></ul>
+			</details>
+
+			<details>
+				<summary> 2. 현재 중국의 모습(코로나 이후) </summary>
+				<p> <ul><li><a href="#two-one"> 2-1. 정부 대처 </a></ul>
+			</details></li>
+			</span>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+			<h2> <span style="color:royalblue">1.</span> 부정적 인식의 원인</h2><hr><br>
+			<div> 
+				&#160;&#160;<mark>왜 중국의 이미지는 좋지 못할까?</mark> 우리와 생김새, 피부색이 매우 비슷하며 심지어 같은 문화권임에도 불구하고 그들을 차별하는 단어('짱깨')를 사용하거나, 중국인과 중국어 그리고 중국문화 자체에 거부감을 느끼는 사람을 어렵지않게 볼 수 있습니다. 언제부터, 왜 이러한 현상이 생기기 시작했는지 생각해보신적 있으신가요? 우리나라 사람들만 유독 거부감이 심한 것일까요? 이것은 비단 우리나라뿐만 아니라, 전 세계 그 어느 곳을 가도 마찬가지입니다. 그 원인을 파헤쳐보자면 대표적인 원인 3가지를 손꼽을 수 있습니다. <br><br>
+				&#160;&#160;<strong>1. 짝퉁사건</strong><br>
+				&#160;&#160;<strong>2. 중국인들의 매너, 소문</strong><br>
+				&#160;&#160;<strong>3. 코로나19 사태</strong><br><br><br>
+
+			<h2 id = "one-one"> <span style="color:royalblue">1-1.</span> 짝퉁사건(산차이 문화) </h2><hr><br>
+				&#160;&#160;중국을 뒤흔든 <mark>짝퉁 달걀 사건</mark>을 아십니까? 2012년 11월 4일, 뤄양시의 한 농산물 시장 입구에서 승합차 한 대가 계란을 팔았습니다. 그 계란은 다른 가게들에 비해 한 근(500g)에 4마오(한화 약 70원)가량 쌌습니다. 그런데 싼 가격에 이끌려 이 계란을 산 사람들은 집에 가서 요리를 하려다가 기겁을 했습니다. <strong>가짜 계란이었던 겁니다.</strong> 뉴스에서 심심찮게 등장하던 그 유명한 가짜 계란 사건입니다.<br><br>
+
+				우리는 짝퉁 하면 명품 가방이나 시계 같은 것을 떠올리지만, 중국에는 이처럼 상상을 뛰어넘는 가짜 상품이 널려있습니다. 상품뿐만아니라 게임, 티비 프로그램 등등 저작권을 침해하는 각종 콘텐츠들 때문에 중국은 '짝퉁의 나라'로 인식되고야 말았습니다. <br><br>
+
+				특히 중국에 진출한 많은 한국 기업인들이 애를 먹고 있습니다. 한류가 유행하면서 갖가지 짝퉁 브랜드가 판을 치고 있어서입니다. 예를 들어 상하이에는 우리나라에서 유행한 팥빙수 가게와 콘셉트가 똑같을 뿐만 아니라 아예 한글 간판을 걸고 있는 가게들이 수도 없이 많습니다. 그중 99%가 원래 한국 브랜드와는 전혀 상관없는 짝퉁입니다. 그러다 보니 짝퉁이 원래 브랜드를 압도하여 진짜 체인점과 짝퉁 체인점을 구분하기가 불가능할 지경에 이르렀습니다.<br><br>
+
+				중국의 이미지 개선을 위해서는 이러한 '<mark>짝퉁 문화</mark>'가 사라져야할 것 입니다.<br><br><br>
+
+			<h2 id = "one-two"> <span style="color:royalblue">1-2.</span> 중국인들의 매너, 소문 </h2><hr><br>
+				&#160;&#160;'<mark>요우커(遊客)</mark>'라는 말을 들어본적 있으신가요? 요우커는 한자로 遊客(유객)을 가리키는 것으로서 중국어로 ‘관광객’을 뜻합니다. 그러나 우리나라에서는 '중국인 관광객’을 일컫는 단어로 자리 잡았습니다. 여러분들은 이들 '요우커'에 대한 어떤 인식이 자리잡고 계신가요? 사실 많은 사람들이 요우커에 대한 부정적 반응이 큽니다. 영화 [범죄도시]에서 비추어지는 조선족들의 야만적인 행동을 보며 많은 사람들이 '엥?' 보다는 '역시나' 라는 생각을 하셨을 것 입니다.<br><br> 언제나 시끄럽게만 들리는 중국어, 도덕이라곤 찾아볼 수 없는 행위들, 중국인 관광객이 집중되는 제주도의 경우 무비자로 입국이 허용되고 있는데, 이를 악용하여 불법체류자도 늘고 있으며, 범죄의 발생도 증가하고 있습니다. 최근 중국인 관광객 첸모씨가 성당에서 기도를 드리고 있는 60대 여성을 흉기로 찔러 살해하는 등 제주도의 치안 상황까지 불안케 한다는 지적도 있어 대책 마련이 시급합니다.<br><br>
+				이러한 사회적 문제로 인해 중국인에 대한 인식은 더더욱 좋지 못한 상황입니다.<br><br><br>
+
+			<h2 id = "one-three"> <span style="color:royalblue">1-3.</span> 코로나 19 사태 </h2><hr><br>
+				&#160;&#160;중국에 대한 적개심이 기하급수적으로 커지게 된 사건, 코로나 19 사건입니다. 2019년 12월 중국 우한에서 처음 발생한 뒤 전 세계로 확산된 바이러스이지만, 중국 정부는 중국에서 시작된 바이러스가 아니라고 주장해 전세계를 분노하게 하였습니다. 코로나19 확산 초기, 발병 상황을 축소·은폐하는 데 급급해 사태를 크게 악화시켰던 것도 모자라 확진자수 조작까지. <br>JTBC의 한 프로그램 [비정상회담]에서 중국 대표 출연자는 조작된 통계를 근거로 '중국정부의 코로나 19 대처는 훌륭한 수준이다' 라고 이야기해 많은 누리꾼들을 분노에 빠트렸습니다. 이에 사람들은 '이쯤되면 눈과 귀가 막힌 중국인들이 안쓰러울 지경이다' 라는 반응을 보이기도 하였습니다.  <br><br>
+
+				어쨌거나 중국 정부는 (06.10. 09시 기준)전세계 40만명의 목숨을 앗아간 장본인이며, 그로인해 국가 위상은 추락할대로 추락한 상황입니다.
+				중국정부는 이 상황에 대해 모든 책임을 질 필요가 있습니다.<br><br><br> 
+   	
+   			<h2> <span style="color:royalblue">2.</span> 현재 중국의 모습(코로나 이후) </h2><hr><br>
+   				&#160;&#160; (06.10. 09시 기준) 확진자 83,046명, 사망 4,634명(출처: 중국국가위생건강위원회 홈페이지) 으로 공식적으로는 진정되고 있다지만 실제 상황은 정부 외에 아무도 모른다는 현재 중국 상황. 중국인들은 어떤 생활을 하고 있을까?<br><br><br>
+
+   			<h2 id = "two-one"> <span style="color:royalblue">2-1.</span> 정부 대처 </h2><hr><br>
+				<ul>
+					<li> 유효한 비자를 소지한 외국인이라도 입국금지 정책을 적용 중</li>
+					<li> 4월 8일부로 코로나19 발원지로 지목된 우한 도시봉쇄가 해제</li>
+					<li> 영화관, 수영장 등 일부를 제외한 대부분의 시설이 다시 운영을 시작</li>
+					<li> 주변 한국인이 많이 가는 광장(식당 등이 밀집한 상업구역)의 한국식당 중 이번 상황으로 폐업한 곳도 있다. 안타까운 일이다.</li>
+					<li> 한국인 혐오는 없어졌다.(언론에서 조용했다.)</li>
+				</ul><br>
+				[출처] 코로나19 현재 중국의 상황(2020-04-07)|https://blog.naver.com/s3rdwar/221912950414
+				<br><br><br> <hr> <br><br>
+
+				<strong><mark>이 저작물은 실제 데이터를 바탕으로 작성하였으나, 작성자의 주관이 뚜렷한 글이므로 읽으실때 유의하시기 바랍니다.</mark></strong><br>
+			</div>
+		</div>
+	</body>
+</html>

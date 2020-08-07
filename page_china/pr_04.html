@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>'니하오'를 아십니까?</title>
+	<style>
+		body {
+			background-color : aliceblue;
+			margin : 0;
+		}
+
+		#menubar {
+			background : mediumturquoise;
+			
+		}/* #menubar는 상단바 - royalblue, mediumturquoise*/
+		#menubar ul{
+			margin : 0;
+			padding : 0;
+			width : auto;
+			height: 50px;
+			padding-left : 150px;
+		}
+		#menubar ul li{
+			display : inline-block;/*새줄로 넘어가지 않게*/
+			padding : 15px 10px;
+			list-style-type : square;
+		}
+		#menubar ul li a {
+			color : white;
+			text-decoration : none; /*밑줄 삭제*/
+			padding-left : 10px; /*글자 간격 10*/
+		}
+		
+		/*-------------------------------------------여기까지 메뉴바 */
+		
+		#content-left {
+			background-color : aliceblue;
+			position : absolute;
+			height: 100%;
+			left: 0px;
+			width: 150px;
+			float: left;
+		} /* 왼쪽 div*/
+		#content-right {
+			background-color : aliceblue;
+			position : absolute;
+			height: 100%;
+			padding-left: 200px;
+			right: 0;
+			width: 380px;
+			float: right;
+			
+		}/* 오른쪽 div*/
+
+		#content-middle {
+			background-color : white;
+			position : absolute;
+			left : 150px;
+			right: 400px;
+			width: 900px;
+			height: auto; min-height: 100px; overflow: auto;
+			padding : 10px; /*글자 주변 공간*/
+			padding-left : 50px;
+			padding-right : 50px;
+			border-style: solid;
+			border-color: silver;
+			border-width: 0.1px;
+			border-top : none;
+			border-bottom : none;
+
+		} /* 가운데 div*/
+		
+
+		img { display: inline; margin-left: 20px; }/*사진은 블록 처리 후 모두 가운데로*/
+
+		#percent {
+			margin-left: 200px;
+		}
+
+		div ul {
+			font-size: 20px; color:olive;
+		}
+
+	</style>
+
+	<script>
+		function change_z(e) {
+			var text = "1. 你好!<br> 2. 你吃饭了吗？ <br> 3. 祝你生日快乐！<br> 4. 我是韩国人 。 <br> 5. 今天几月几号？ <br>";
+
+			var p = document.getElementById("p");
+			p.innerHTML = text;
+		}
+
+		function change_h(e) {
+			var text = "1. 안녕? <br> 2. 밥은 먹었니?<br> 3. 생일 축하해! <br> 4. 나는 한국인입니다.<br> 5. 오늘 몇월 며칠이야? <br>";
+
+			var p = document.getElementById("p");
+			p.innerHTML = text;
+		}
+
+		function change_p(e) {
+			var a = prompt("안녕하세요", "여기에다 쓰세요");
+			var text = a;
+			var p = document.getElementById("srcText");
+			p.innerHTML = text;
+			//document.write(a);
+		}
+
+	</script>
+</head>
+	<body>
+		<nav id="menubar">
+			<ul>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_01.html"> HOME </a>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_02.html"> 오해 </a>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_03.html"> 간단 퀴즈 </a>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_04.html"> '니하오'를 아십니까? </a>	
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_05.html"> 퍼즐 </a>
+				<!--<li> 
+					<form name= "fo" method="get">
+					ID : <input type="text" size="15" value="">
+					PW : <input type="password" size="15" value="">
+					<input type="submit" value="로그인"></form>-->
+
+			</ul> <!--메뉴바 -->
+		</nav>
+
+		<div id = "content-left"></div>
+
+		<div id = "content-right"> &#160;&#160; <!--탭--> <br></div>
+
+		<div id = "content-middle">
+			<h1> 알아두면 쓸모있는 汉语 </h1>
+			<br><br><span>
+			<img src="C:\Users\이주은\Desktop\Web\zhu.png" width="300"
+			height="250" alt="사진 없음">
+			<img src="C:\Users\이주은\Desktop\Web\붓.png" width="250"
+			height="250" alt="사진 없음"></span><br>
+			<br><br>
+			<h2> <span style="color:royalblue">1.</span> 중국어를 배우면 </h2><hr><br>
+				&#160;&#160; 중국어를 배워본 적 있으신가요? ‘세계의 공장’에서 어느덧 G2로 부상한 중국. 이에 따라 중국어 가능자를 우대하는 기업들이 늘면서 중국한어수평고시(HSK)에 대한 관심도 뜨겁습니다. 업무상 중국어 능력이 필요한 직장인 뿐 아니라 미래를 준비하려는 학생들도 적극적으로 응시하는 경우가 많은데요. 이로 인해 국내의 HSK 응시생 숫자는 매달 증가세 라고 합니다. 전 세계적으로도 인터넷에 기반한 HSK iBT 응시생은 매년 40% 이상 증가하는 추세를 보이고 있습니다.
+				<br><br><br>
+
+
+			<h2> <span style="color:royalblue">2.</span> 많이 쓰이는 중국어 </h2><hr><br>
+				&#160;&#160;흔히 쓰이는 중국어에는 어떤 것들이 있는지 알아봅시다.<br><br>
+				<ul><strong><span id = "p">
+					<ol type="1">
+						<li> 안녕?
+						<li> 밥은 먹었니?
+						<li> 생일 축하해!
+						<li> 나는 한국인입니다.
+						<li> 오늘 몇월 며칠이야?
+					</ol>
+				</strong></ul></span>
+				<br>
+
+				<button style="font-size:20px; color:red; margin-left: 20px" onclick = "change_z(event)">中文</button>
+				<button style="font-size:20px; color:navy;" onclick = "change_h(event)">한국어</button>
+				<br><br><br>
+
+
+
+				<h2> <span style="color:royalblue">3.</span> 추가적으로 알고 싶은 표현 </h2><hr><br>
+				&#160;&#160; 만약 추가적으로 알고싶은 표현이 있다면 아래에 추가해주세요:) <br><br>
+
+				<textarea id="srcText" rows="15" cols="50" style="margin-left: 20px; box-shadow: 3px 3px 5px grey;" onclick = "change_p(event)">
+					
+				</textarea>
+				<br><br>
+				<!--<button onclick="showHTML()" style="font-size:15px; margin-left: 20px" onclick = "change_p(event)">추가</button>-->
+
+				<br><br><br>
+
+
+
+				<hr> <br><br>
+
+				<strong><mark>이 저작물은 실제 데이터를 바탕으로 작성하였으나, 작성자의 주관이 뚜렷한 글이므로 읽으실때 유의하시기 바랍니다.</mark></strong><br>
+
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>퍼즐</title>
+	<style>
+		body {
+			background-color : aliceblue;
+			margin : 0;
+		}
+
+		#menubar {
+			background : mediumturquoise;
+			
+		}/* #menubar는 상단바 - royalblue, mediumturquoise*/
+		#menubar ul{
+			margin : 0;
+			padding : 0;
+			width : auto;
+			height: 50px;
+			padding-left : 150px;
+		}
+		#menubar ul li{
+			display : inline-block;/*새줄로 넘어가지 않게*/
+			padding : 15px 10px;
+			list-style-type : square;
+		}
+		#menubar ul li a {
+			color : white;
+			text-decoration : none; /*밑줄 삭제*/
+			padding-left : 10px; /*글자 간격 10*/
+		}
+		
+		/*-------------------------------------------여기까지 메뉴바 */
+		
+		#content-left {
+			background-color : aliceblue;
+			position : absolute;
+			height: 100%;
+			left: 0px;
+			width: 150px;
+			float: left;
+		} /* 왼쪽 div*/
+		#content-right {
+			background-color : aliceblue;
+			position : absolute;
+			height: 100%;
+			padding-left: 200px;
+			right: 0;
+			width: 380px;
+			float: right;
+			
+		}/* 오른쪽 div*/
+
+		#content-middle {
+			background-color : white;
+			position : absolute;
+			left : 150px;
+			right: 400px;
+			width: 900px;
+			height: auto; min-height: 100px; overflow: auto;
+			padding : 10px; /*글자 주변 공간*/
+			padding-left : 50px;
+			padding-right : 50px;
+			border-style: solid;
+			border-color: silver;
+			border-width: 0.1px;
+			border-top : none;
+			border-bottom : none;
+
+		} /* 가운데 div*/
+
+
+        #image {
+            transform-Origin: top left;
+            /* IE 10+, Firefox, etc. */
+            -webkit-transform-Origin: top left;
+            /* Chrome */
+            -ms-transform-Origin: top left;
+            /* IE 9 */
+        }
+
+        #container.rotate90 #image {
+            transform: rotate(90deg) translateY(-100%);
+            -webkit-transform: rotate(90deg) translateY(-100%);
+            -ms-transform: rotate(90deg) translateY(-100%);
+        }
+
+        #container.rotate180 #image {
+            transform: rotate(180deg) translate(-100%, -100%);
+            -webkit-transform: rotate(180deg) translate(-100%, -100%);
+            -ms-transform: rotate(180deg) translateX(-100%, -100%);
+        }
+
+        #container.rotate270 #image {
+            transform: rotate(270deg) translateX(-100%);
+            -webkit-transform: rotate(270deg) translateX(-100%);
+            -ms-transform: rotate(270deg) translateX(-100%);
+        }
+
+	</style>
+	
+</head>
+	<body>
+		<nav id="menubar">
+			<ul>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_01.html"> HOME </a>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_02.html"> 오해 </a>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_03.html"> 간단 퀴즈 </a>
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_04.html"> '니하오'를 아십니까? </a>	
+				<li> <a href="file:///C:/Users/%EC%9D%B4%EC%A3%BC%EC%9D%80/Desktop/Web/pr_05.html"> 퍼즐 </a>
+			</ul> <!--메뉴바 -->
+		</nav>
+
+		<div id = "content-left"></div>
+
+		<div id = "content-right"> &#160;&#160; <!--탭--> <br>
+		 	</div>
+
+		<div id = "content-middle">
+			<h1> 퍼즐 게임 </h1><h4> 이미지를 마우스로 클릭하여 자금성을 완성해주세요 </h4>
+			<br>
+
+			
+    		<span id="container">
+        	<img src="C:\Users\이주은\Desktop\Web\자금성1.jpg" width="250"
+				height="200" alt="사진 없음" id="image" />
+    		</span>
+
+
+    		<span id="container_2">
+        	<img src="C:\Users\이주은\Desktop\Web\자금성3.jpg" width="250"
+				height="200" alt="사진 없음" id="image_2" />
+    		</span><br>
+   		
+
+    		<span id="container_3">
+        	<img src="C:\Users\이주은\Desktop\Web\자금성2.jpg" width="250"
+				height="200" alt="사진 없음" id="image_3" />
+    		</span>
+	
+
+    		<span id="container_4">
+        	<img src="C:\Users\이주은\Desktop\Web\자금성4.jpg" width="250"
+				height="200" alt="사진 없음" id="image_4" />
+    		</span><br><br> 
+    		<!--사진 부분-->
+
+
+    		<button id="button">1번 사진 회전</button>
+    		<button id="button_2">2번 사진 회전</button>
+    		<button id="button_3">3번 사진 회전</button>
+    		<button id="button_4">4번 사진 회전</button> 
+    		<!--버튼 부분-->
+
+				<br><br><br> <hr> <br><br>
+
+		
+		</div>
+	</body>
+	
+	<script>
+
+		var angle = 0,
+  		img = document.getElementById('container');
+		document.getElementById('button').onclick = function() {
+  			angle = (angle + 90) % 360;
+  			img.className = "rotate" + angle;
+		}
+
+		var angle_2 = 0,
+  		img_2 = document.getElementById('container_2');
+		document.getElementById('button_2').onclick = function() {
+  			angle_2 = (angle_2 + 90) % 360;
+  			img.className = "rotate" + angle_2;
+		}
+
+		var angle_3 = 0,
+  		img_3 = document.getElementById('container_3');
+		document.getElementById('button_3').onclick = function() {
+  			angle_3 = (angle_3 + 90) % 360;
+  			img.className = "rotate" + angle_3;
+		}
+
+		var angle_4 = 0,
+  		img_4 = document.getElementById('container_4');
+		document.getElementById('button_4').onclick = function() {
+  			angle_4 = (angle_4 + 90) % 360;
+  			img.className = "rotate" + angle_4;
+		}
+	</script>
+</html>
